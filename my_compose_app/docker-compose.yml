@@ -1,0 +1,11 @@
+version: '3'
+services:
+  web:
+	  command: python exercise.py #올바른 파일명 확인
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+  redis:
+    image: "redis:alpine"
